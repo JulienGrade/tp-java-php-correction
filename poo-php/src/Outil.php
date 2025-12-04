@@ -2,9 +2,21 @@
 
 class Outil
 {
-    private string $nom;
-    private float $prixParJour;
-    private bool $disponible;
+    public string $nom {
+        get {
+            return $this->nom;
+        }
+    }
+    public float $prixParJour {
+        get {
+            return $this->prixParJour;
+        }
+    }
+    public bool $disponible {
+        set {
+            $this->disponible = $value;
+        }
+    }
 
     public function __construct(string $nom, float $prixParJour, bool $disponible = true)
     {
@@ -13,24 +25,9 @@ class Outil
         $this->disponible = $disponible;
     }
 
-    public function getNom(): string
-    {
-        return $this->nom;
-    }
-
-    public function getPrixParJour(): float
-    {
-        return $this->prixParJour;
-    }
-
     public function estDisponible(): bool
     {
         return $this->disponible;
-    }
-
-    public function setDisponible(bool $disponible): void
-    {
-        $this->disponible = $disponible;
     }
 
     public function __toString(): string

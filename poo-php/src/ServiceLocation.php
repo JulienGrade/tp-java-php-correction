@@ -26,8 +26,8 @@ class ServiceLocation
             throw new LocationException("Le nombre de jours doit etre strictement positif.");
         }
 
-        $prixTotal = $nbJours * $outil->getPrixParJour();
-        $outil->setDisponible(false);
+        $prixTotal = $nbJours * $outil->prixParJour;
+        $outil->disponible = false;
 
         return $prixTotal;
     }
@@ -43,6 +43,6 @@ class ServiceLocation
             throw new LocationException("Cet outil est deja marque comme disponible.");
         }
 
-        $outil->setDisponible(true);
+        $outil->disponible = true;
     }
 }
