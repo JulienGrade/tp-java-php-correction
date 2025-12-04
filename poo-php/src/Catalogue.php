@@ -27,7 +27,7 @@ class Catalogue
      */
     public function getOutil(int $index): Outil
     {
-        if ($index < 0 || $index >= count($this->outils)) {
+        if ($index < 0 || $index >= $this->taille()) {
             throw new LocationException("Aucun outil pour cet index.");
         }
         return $this->outils[$index];
